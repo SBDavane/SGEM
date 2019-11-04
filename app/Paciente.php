@@ -6,12 +6,12 @@ use Illuminate\Database\Eloquent\Model;
 
 class Paciente extends Model
 {
-    protected $fillable = ["nome_completo", "data_nascimente", "nid"];
+  protected $fillable = ["nome_completo", "data_nascimento", "nid"];
 
 
-    public function exames(){
+  public function exames()
+  {
 
-        return $this->hasMany('App\Exame');
-
-    }
+    return $this->hasMany('App\Exame');
+  }
 }
