@@ -38,7 +38,7 @@ JsonApi::register('default')->routes(function ($api) {
 
       });
 
-      $api->resource('paciente')->relationships(function ($relations) {
+      $api->resource('pacientes')->relationships(function ($relations) {
         $relations->hasMany('exames');
 
       });

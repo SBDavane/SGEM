@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreatePacientesTable extends Migration
+class AddNidToPacientesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,11 +13,9 @@ class CreatePacientesTable extends Migration
      */
     public function up()
     {
-        Schema::create('pacientes', function (Blueprint $table) {
-            $table->increments('id');
-            $table->string('nome_completo');
-            $table->string('data_nascimento');
-            $table->timestamps();
+        Schema::table('pacientes', function (Blueprint $table) {
+            $table->string('nid')->nullable()->after('data_nascimente');
+        
         });
     }
 
@@ -28,6 +26,8 @@ class CreatePacientesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('pacientes');
+        Schema::table('pacientes', function (Blueprint $table) {
+            //
+        });
     }
 }
